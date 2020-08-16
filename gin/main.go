@@ -8,6 +8,9 @@ import (
 )
 
 func main() {
+
+	gin.SetMode(gin.ReleaseMode)
+
 	// app := gin.Default()
 	app := gin.New()
 	app.Use(gin.Logger())

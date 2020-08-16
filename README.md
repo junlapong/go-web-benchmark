@@ -15,7 +15,7 @@ make
 ```
 bin/echo
 bin/fiber
-GIN_MODE=release; bin/gin
+bin/gin
 ```
 
 ## Load Test

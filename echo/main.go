@@ -11,7 +11,7 @@ func main() {
 	e := echo.New()
 	// e.Use(middleware.Logger())
 	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
-		Format: "${time_rfc3339}    ${status}    ${method}\t${uri}\n",
+		Format: "${time_rfc3339}    ${status}    ${method} ${uri}\n",
 	}))
 
 	e.GET("/", func(c echo.Context) error {
