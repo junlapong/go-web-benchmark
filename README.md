@@ -68,14 +68,3 @@ Content-Length: 18
     "message": "pong"
 }
 ```
-
-## Notes
-
-macOS has Apache Benchmark by default, try: ab --help
-
-```
-curl -OL http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz
-tar -xzf libtool-2.4.6.tar.gz
-cd libtool-2.4.6
-./configure && make && sudo make install
-```
