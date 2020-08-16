@@ -20,6 +20,16 @@ bin/gin
 
 ## Load Test
 
+```
+make bench
+
+# or
+make wrk
+
+# or
+make hey
+```
+
 use [hey](https://github.com/rakyll/hey)
 
 ```
@@ -38,6 +48,8 @@ hey -z 5s http://127.0.0.1:8080/ping
 
 ## Tools
 
+use [curlie](https://curlie.io/)
+
 ```
 go get -u -v github.com/rs/curlie
 ```
@@ -55,4 +67,15 @@ Content-Length: 18
 {
     "message": "pong"
 }
+```
+
+## Notes
+
+macOS has Apache Benchmark by default, try: ab --help
+
+```
+curl -OL http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz
+tar -xzf libtool-2.4.6.tar.gz
+cd libtool-2.4.6
+./configure && make && sudo make install
 ```
