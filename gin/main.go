@@ -1,11 +1,25 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"log"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Hello, World!")
+	// app := gin.Default()
+	app := gin.New()
+	app.Use(gin.Logger())
+	app.Use(gin.Recovery())
+
+	app.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "Hello, World!")
 	})
-	r.Run(":8080")
+
+	app.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"message": "pong"})
+	})
+
+	log.Fatal(app.Run(":8080"))
 }
