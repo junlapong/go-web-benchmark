@@ -1,8 +1,6 @@
 # go-web-benchmark
 
-- [echo](https://echo.labstack.com/)
-- [fiber](https://gofiber.io/)
-- [gin](https://gin-gonic.com/)
+[echo](https://echo.labstack.com/), [fiber](https://gofiber.io/), [gin](https://gin-gonic.com/)
 
 ## Make
 
@@ -40,13 +38,12 @@ run
 
 ```
 hey -n 100000 http://127.0.0.1:8080/ping
-```
-or
-```
+
+# or
 hey -z 5s http://127.0.0.1:8080/ping
 ```
 
-## Tools
+## HTTP Client Tools
 
 use [curlie](https://curlie.io/)
 
@@ -56,9 +53,7 @@ go get -u -v github.com/rs/curlie
 
 ```
 curlie localhost:8080/ping
-```
 
-```
 HTTP/1.1 200 OK
 Date: Sun, 16 Aug 2020 19:24:11 GMT
 Content-Type: application/json
@@ -67,4 +62,28 @@ Content-Length: 18
 {
     "message": "pong"
 }
+```
+
+## Monitoring
+
+
+
+<img src="./img/monitor_01.png" width="100%">
+
+
+
+<img src="./img/monitor_02.png" width="100%">
+
+```
+# find process id
+ps -ef | grep "bin/echo"
+ps -ef | grep "bin/fiber"
+ps -ef | grep "bin/gin"
+
+# monitor process
+top -pid <PIDx>
+htop -p PID1, PID2, PID3
+
+# find binary size
+ls -lh bin
 ```

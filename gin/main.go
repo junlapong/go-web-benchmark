@@ -3,11 +3,17 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8083"
+	}
 
 	gin.SetMode(gin.ReleaseMode)
 
@@ -24,5 +30,5 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"message": "pong"})
 	})
 
-	log.Fatal(app.Run(":8080"))
+	log.Fatal(app.Run(":" + port))
 }
