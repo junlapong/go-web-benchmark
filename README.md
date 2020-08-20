@@ -66,11 +66,7 @@ Content-Length: 18
 
 ## Monitoring
 
-
-
 <img src="./img/monitor_01.png" width="100%">
-
-
 
 <img src="./img/monitor_02.png" width="100%">
 
@@ -86,4 +82,25 @@ htop -p PID1, PID2, PID3
 
 # find binary size
 ls -lh bin
+```
+
+Add Spring Boot and Expresss
+
+```
+Test: wrk -c 10 -t 1 -d 10s http://localhost:<PORT>/ping
+
+Spring Boot (Java)
+Requests/sec:  18045.80     Memory: 228 M
+
+Express (NodeJS)
+Requests/sec:   3081.51     Memory:  56 M
+
+Echo (Go)
+Requests/sec:  26111.17     Memory:   8 M
+
+Fiber (Go)
+Requests/sec:  31180.85     Memory:  10 M
+
+Gin (Go)
+Requests/sec:  21254.17     Memory:   9 M
 ```
