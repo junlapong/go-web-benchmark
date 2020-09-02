@@ -1,4 +1,5 @@
 build:
+	go build -o bin/http http/main.go
 	go build -o bin/echo echo/main.go
 	go build -o bin/fiber fiber/main.go
 	go build -o bin/gin gin/main.go
@@ -17,4 +18,3 @@ test:
 
 clean:
 	rm -rf bin/
-
