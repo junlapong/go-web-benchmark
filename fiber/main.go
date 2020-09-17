@@ -24,7 +24,9 @@ func main() {
 	})
 
 	app.Get("/ping", func(c *fiber.Ctx) {
-		c.JSON(fiber.Map{"message": "pong"})
+		if err := c.JSON(fiber.Map{"message": "pong"}); err != nil {
+			log.Println(err)
+		}
 	})
 
 	log.Fatal(app.Listen(":" + port))
